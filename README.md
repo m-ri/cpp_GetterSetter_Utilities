@@ -5,15 +5,6 @@ GetSet.h contains the library, while GetSet_Experiments.cpp provides some exampl
 
 ```
 
-GetSet<int> t(3);
-t.setGetter([](int& currentItem)-> int {return max(currentItem ,0); });
-t=-10;
-cout<<t;//out: 0
-
-```
-
-``
-
 GetSet<int> positiveVariable(3);
 t.setGetter([](int& currentItem)-> int {return max(currentItem ,0); });
 positiveVariable.setSetter([](int& currentItem, int newValue) {
