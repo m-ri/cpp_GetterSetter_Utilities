@@ -26,9 +26,10 @@ public:
 	void test() {
 		
 		testInteger();
+		testString();
 		testMove();
 		testCopy();
-		testString();
+		
 
 	}
 	void testInteger() {
@@ -49,6 +50,24 @@ public:
 		cout << t << endl;//expected 6*3=18
 
 		std::cout << "END testInteger" << std::endl << std::endl;
+	}
+	void testString() {
+		std::cout << "-----------------" << std::endl;
+		std::cout << "START testString" << std::endl;
+
+
+
+		GetSet<string> t("aaa");
+		cout << t << endl;//expected 'aaa'
+
+		t.setSetter([](auto& currItem, auto newItem) {currItem = "(Setter) " + newItem; });
+		t.setGetter([](auto& currItem) ->auto {return currItem + " (Getter)"; });
+
+		t = "bbb";
+		cout << t << endl;//expected '(Setter) bbb (Getter)'
+		cout << ((string)t) << endl;//expected '(Setter) bbb (Getter)'
+
+		std::cout << "END testString" << std::endl << std::endl;
 	}
 	void testMove() {
 		std::cout << "-----------------" << std::endl;
@@ -83,24 +102,7 @@ public:
 
 		std::cout << "END testCopy" << std::endl << std::endl;
 	}
-	void testString() {
-		std::cout << "-----------------" << std::endl;
-		std::cout << "START testString" << std::endl;
-
-
-
-		GetSet<string> t("aaa");
-		cout << t << endl;//expected 'aaa'
-
-		t.setSetter([](auto& currItem, auto newItem) {currItem = "(Setter) " + newItem; });
-		t.setGetter([](auto& currItem) ->auto {return currItem + " (Getter)"; });
-
-		t = "bbb";
-		cout << t << endl;//expected '(Setter) bbb (Getter)'
-		cout << ((string)t) << endl;//expected '(Setter) bbb (Getter)'
-
-		std::cout << "END testString" << std::endl << std::endl;
-	}
+	
 
 	/*class TempClass {
 	public:
