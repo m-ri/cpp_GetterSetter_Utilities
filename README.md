@@ -8,14 +8,14 @@ Basic example
 #include "GetSet.h"
 
 GetSet<int> positiveVariable(3);
-t.setGetter([](int& currentItem)-> int {return max(currentItem ,0); });
-positiveVariable.setSetter([](int& currentItem, int newValue) {
-        if(newValue>=0)currentItem=newValue;
-        else currentItem=currentItem;/* throw std::exception("Added negative value");*/ ; 
-    });
-    
-t=5;
-t=-10;
-cout<<t;//output: 5
+	positiveVariable.setGetter([](int& currentItem)-> int {return max(currentItem, 0); });
+	positiveVariable.setSetter([](int& currentItem, int newValue) {
+		if (newValue >= 0)currentItem = newValue;
+		else currentItem = currentItem;/* throw std::exception("Added negative value");*/;
+	});
+
+positiveVariable = 5;
+positiveVariable = -10;
+cout << positiveVariable;//output: 5
 ```
 

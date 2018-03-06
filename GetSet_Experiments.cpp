@@ -7,9 +7,9 @@
 
 using namespace std;
 
-//*
+//* 
 int main() {
-	(new GetSet_Experiments)->test();
+	GetSet_Experiments::testAll();
 
 	std::cout << "Press [ENTER} to exit" << std::endl;
 	string ret;
@@ -23,16 +23,15 @@ class GetSet_Experiments {
 
 
 public:
-	void test() {
+	static void testAll() {
 		
 		testInteger();
 		testString();
 		testMove();
 		testCopy();
-		
 
 	}
-	void testInteger() {
+	static void testInteger() {
 		std::cout << "-----------------" << std::endl;
 		std::cout << "START testInteger" << std::endl;
 
@@ -51,7 +50,7 @@ public:
 
 		std::cout << "END testInteger" << std::endl << std::endl;
 	}
-	void testString() {
+	static void testString() {
 		std::cout << "-----------------" << std::endl;
 		std::cout << "START testString" << std::endl;
 
@@ -69,7 +68,7 @@ public:
 
 		std::cout << "END testString" << std::endl << std::endl;
 	}
-	void testMove() {
+	static void testMove() {
 		std::cout << "-----------------" << std::endl;
 		std::cout << "START testMove" << std::endl;
 
@@ -82,7 +81,7 @@ public:
 
 		std::cout << "END testMove" << std::endl << std::endl;
 	}
-	void testCopy() {
+	static void testCopy() {
 		std::cout << "-----------------" << std::endl;
 		std::cout << "START testCopy" << std::endl;
 
@@ -104,7 +103,7 @@ public:
 	}
 	
 
-	/*class TempClass {
+/*	class TempClass {
 	public:
 	int a;
 	};

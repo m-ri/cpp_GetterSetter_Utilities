@@ -58,7 +58,7 @@ public:
 		if (_setterFunction != nullptr ) {
 			_setterFunction(item, new_value);
 		}else {
-			this->item = new_value;
+			item = new_value;
 		}
 		return *this;
 	}
@@ -84,7 +84,7 @@ public:
 			_setterFunction(item, std::move(new_value));
 		}
 		else {
-			this->item =std::move(new_value);
+			item =std::move(new_value);
 		}
 		return *this;
 	}*/
